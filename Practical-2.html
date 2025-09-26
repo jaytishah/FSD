@@ -1,0 +1,92 @@
+Weather.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">w
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weather</title>
+    <script src="weather.js"></script>
+</head>
+<style>
+    body {
+  font-family: Arial, sans-serif;
+  background: #f0f4f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.weather-app {
+  background: white;
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  width: 300px;
+}
+
+h1 {
+  color: #2c3e50;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+input {
+  padding: 10px;
+  width: 80%;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  background: #db8a34;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #2980b9;
+}
+
+#weatherResult {
+  margin-top: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #34495e;
+}
+
+</style>
+<body>
+    <center>
+        
+        <h1>Weather App</h1>
+        <input type="text" id="city" placeholder="enter your city" required/>
+        <button id="btn" onclick="weather()" >Click here to Get Weather</button>
+        <div id="res"></div>
+    </center>
+</body>
+</html>
+Weather.js
+const weatherdata={
+    "Ahemdabad": { temperature: "32°C", condition: "Sunny" },
+  "vadodara": { temperature: "28°C", condition: "Humid" },
+  "bharuch": { temperature: "18°C", condition: "Cloudy" },
+  "Anand": { temperature: "22°C", condition: "Rainy" }
+};
+function weather(){
+    const city=document.getElementById("city").value;
+    const res=document.getElementById("res");
+    if(weatherdata[city]){
+        res.innerHTML=`Temperature: ${weatherdata[city].temperature}<br>Condition: ${weatherdata[city].condition}`;
+    }
+    else{
+        res.innerHTML="City not found in database.";
+    }
+}
+
