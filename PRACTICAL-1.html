@@ -1,0 +1,55 @@
+1.Vote.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vote.js"></script>
+</head>
+<style>
+  h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    border-bottom: 3px solid #3498db;
+    display: inline-block;
+  }
+</style>
+
+<body>
+    <center>
+    <h1>Vote For Your Favorite Language</h1>
+    <button id="btn1" onclick="js()">Javascript</button>
+    <button id="btn2" onclick="python()">Python</button>
+    <button id="btn3" onclick="java()">Java</button>
+    <div id="res1"></div>
+    <div id="res2"></div>
+    <div id="res3"></div>
+    </div>
+    </center>
+</body>
+</html>
+
+2.vote.js
+let count=0;
+function js(){
+     count++;
+     document.getElementById("res1").innerHTML=`Javascript: ${count}`;
+}
+let count1=0;
+function python(){
+     count1++;
+     document.getElementById("res2").innerHTML=`Python: ${count}`;
+}
+let count2=0;
+function java(){
+     count2++;
+     document.getElementById("res3").innerHTML=`Java: ${count}`;
+}
+
+
